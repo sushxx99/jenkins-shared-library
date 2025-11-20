@@ -9,9 +9,9 @@ def call() {
 
     stage('Deploy Container') {
         sh '''
-        podman stop demo-app || true
-        podman rm demo-app || true
-        podman run -d --name demo-app -p 8081:8080 demo-app:latest
+        sudo podman stop demo-app || true
+        sudo podman rm demo-app || true
+        sudo podman run -d --name demo-app -p 8081:8080 demo-app:latest
         '''
     }
 }
