@@ -1,24 +1,15 @@
 def call() {
-    pipeline {
-        agent any
-        stages {
-            stage('Checkout') {
-                steps {
-                    checkout scm
-                }
-            }
+    echo "Running CI Pipeline"
 
-            stage('Build') {
-                steps {
-                    sh 'echo "Building the application..."'
-                }
-            }
+    stage('Checkout') {
+        checkout scm
+    }
 
-            stage('Test') {
-                steps {
-                    sh 'echo "Running tests..."'
-                }
-            }
-        }
+    stage('Build') {
+        sh 'echo "Building application…"'
+    }
+
+    stage('Test') {
+        sh 'echo "Running tests…"'
     }
 }
