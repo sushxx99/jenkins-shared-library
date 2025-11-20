@@ -3,7 +3,7 @@ def call() {
 
     stage('Container Build') {
         sh '''
-        podman build -t demo-app:latest .
+        sudo podman build -t demo-app:latest .
         '''
     }
 
