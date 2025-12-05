@@ -1,5 +1,6 @@
 def call() { 
     echo "Running CI Pipeline for ${env.JOB_NAME}"
+    echo "Shared Library Update: This line appears in ALL microservice pipelines!"	
 
     stage('Checkout') {
         checkout scm
